@@ -1,0 +1,27 @@
+[project]
+name = "Optiver Project"
+version = "0.1.0"
+description = "Optiver project for prediction price movement"
+authors = [
+    { name = "freya Du", email = "hd2367@nyu.edu" }
+]
+
+dependencies = [
+    "scikit-learn>=1, <2",
+    "metaflow==2.10.3",
+    "matplotlib==3.4.3",
+    "setuptools>=68.2.2",
+    "jupyterlab>=4, <5",
+]
+
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling","setuptools>=42", "wheel", "flit_core>=3.2"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
