@@ -5,6 +5,8 @@ Phase I:
 Duplicate a model that is similar with the notebook. Train the model with LGBMRegressor, XGBRegressor, and CatBoostRegressor firstly. And compared which model is best
 based on features calculated in the notebook.
 
+- Current situation:
+
 • Done with the data preprocess. Chosen 10560 data based on the observation of the far price and near price with/without values apearing alternately. Then the subdateset contains 
 data in a period(half has far price and near price, another hald doesn't).
 • Built a simple sklearn regression learning with MSE: 18633.986463027177. This model definately is a bad one. So then we should try out other advanced model.
