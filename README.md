@@ -1,23 +1,11 @@
-# optiver-
-Train a model that can predict stock market price movement
-
-Phase I:
-Duplicate a model that is similar with the notebook. Train the model with LGBMRegressor, XGBRegressor, and CatBoostRegressor firstly. And compared which model is best
-based on features calculated in the notebook.
-
-- Current situation:
-
-• Done with the data preprocess. Chosen 10560 data based on the observation of the far price and near price with/without values apearing alternately. Then the subdateset contains 
-data in a period(half has far price and near price, another hald doesn't).
-• Built a simple sklearn regression learning with MSE: 18633.986463027177. This model definately is a bad one. So then we should try out other advanced model.
-
-- problems:
-
-• The column with nan value, far price and near price, appears periodly. ----- (1). Need to find out the meaning of it and how to deal with it?
-• it contains inf number after calculating the other features.  ------ is that ok to just remove them?
-- Suggestions on tracking model preformance:
-• Use Comet to track every training process and record the model performance, for being easier to pick up a better model later.
-
-Phase II:
-Research on financial model to create new training features to improve model accuracy. 
-
+# Prediction of stock closing price movement
+## Objective
+The objective of this project is to make prediction of the stock closing price movement for companies to make investment decisions.
+## Description
+The dataset is from Kaggle, containing 1 million entries. It contains market indexes such as bid price, ask, price, bid size, ask size, reference price, matched size etc. The target is the final price movement direction with representation of the sign and the movement magnitude with representation of the absolute value of the target. The target is calculated from financial model with WAP index. So for the users, they can input the current market index, to get the predicted closing price trend respective to the current time. 
+## Instruction
+We've fit the model into metaflow in order to get all data saved. The comet is used to get track of the performance and get visualization of the performance. The user interface is designed by streamlit. Therefore, there is a file called optiver.py, for training and testing models with metaflow as the structure. User can use the user interface we designed to get prediction, which is programmed in the file called prediction.py.
+## How to get 
+* Directly run prediction.py by using command: streamlit prediction.py run to open the user interface.
+* input index for demonstration to get the prediction by clicking submit bottom.
+  
